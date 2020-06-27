@@ -1,6 +1,7 @@
 package facebook
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -18,6 +19,7 @@ const (
 )
 
 func InitFacebookAPI() {
+	fmt.Println("InitFacebookAPI")
 	r := mux.NewRouter()
 	r.HandleFunc("/webhook", VerificationEndpoint).Methods("GET")
 	r.HandleFunc("/webhook", MessagesEndpoint).Methods("POST")
